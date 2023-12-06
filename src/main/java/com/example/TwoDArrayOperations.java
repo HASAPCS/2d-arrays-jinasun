@@ -37,7 +37,7 @@ public class TwoDArrayOperations {
     public static boolean containsValue(int[][] array, int value) {
         for (int i = 0; i < array.length; i++){
             for (int j = 0; j < array[i].length; j++){
-                if (array[i][j] = value){
+                if (array[i][j] == value){
                     return true;
                 }
             }
@@ -51,7 +51,7 @@ public class TwoDArrayOperations {
         int sum = 0;
         int count = 0;
         for (int i = 0; i <array.length; i++){
-            for (int j = 0; j < array[i].length; i++){
+            for (int j = 0; j < array[i].length; j++){
                 sum += array[i][j];
                 count ++;
 
@@ -74,10 +74,20 @@ public class TwoDArrayOperations {
     // Exercise 6: Flatten a 2D Array into 1D Array
     public static int[] flattenArray(int[][] array) {
         int count = 0;
+        // check total length required for flattened array
         for (int i = 0; i<array.length;i++){
             for (int j = 0; j<array[i].length;j++){
-                flattenArray[count] = array[i][j];
-                count++ //count = count + 1
+                count++; //count = count + 1
+            }
+        }
+        int[] flattenArray= new int[count];
+        int count2 = 0;
+
+        //write all the elements to flattened array
+        for (int i = 0; i<array.length;i++){
+            for (int j = 0; j<array[i].length;j++){
+                flattenArray[count2] = array[i][j];
+                count2++;
             }
         }
         // TODO: Implement the logic to flatten the 2D array into a 1D array.
